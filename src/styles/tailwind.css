@@ -1,0 +1,39 @@
+@import 'tailwindcss/base';
+@import './fonts.css';
+@import './docsearch.css';
+@import './prism.css';
+@import './helm-ui.css';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+  content: "";
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: "";
+}
+
+.prose :where(code):not(:where([class~="prism-code"] *)) {
+  color: var(--tw-prose-code);
+  font-family: monospace;
+  font-weight: 400;
+  /* font-size: 0.875em; */
+  background-color: rgb(0 0 0 / 10%);
+  border-radius: 0.3em;
+  padding: 4px 5px;
+  white-space: nowrap;
+}
+
+.flip {
+  -webkit-transform: scaleX(-1); transform: scaleX(-1);
+  -webkit-transform: scaleY(-1); transform: scaleY(-1);
+}
+
+.inserted {
+  @apply text-green-600;
+}
+
+.deleted {
+  @apply text-red-600;
+}
